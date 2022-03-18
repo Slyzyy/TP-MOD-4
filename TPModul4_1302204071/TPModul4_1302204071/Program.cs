@@ -12,13 +12,30 @@ namespace TPModul4_1302204071
         {
             String nama = "Auzan";
             HaloGeneric.SapaUser<string>(ref nama);
+            DataGeneric<string> dataGeneric = new DataGeneric<string>("1302204071");
         }
     }
 
     class HaloGeneric
-{
-    public static void SapaUser<T>(ref T nama)
     {
-        Console.WriteLine("Halo user " + nama);
+        public static void SapaUser<T>(ref T nama)
+        {
+            Console.WriteLine("Halo user " + nama);
+        }
+    }
+
+    public class DataGeneric<T>
+    {
+        private T Data;
+
+        public DataGeneric(T Data)
+        {
+            this.Data = Data;
+        }
+
+        public void PrintData()
+        {
+            Console.WriteLine("Data yang tersimpan adalah " + Data);
+        }
     }
 }
